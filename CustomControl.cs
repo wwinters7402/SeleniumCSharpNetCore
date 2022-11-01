@@ -11,7 +11,7 @@ namespace SeleniumCSharpNetCore
     public class CustomControl : DriverHelper
     {
 
-
+        //This is a custom control method to find an element and type a value into that element.
          public static void ComboBox(string controlName, string value)
         {
             IWebElement comboControl = Driver.FindElement(By.XPath($"//input[@id='{controlName}-awed']"));
