@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.DevTools.V105.CSS;
+using SeleniumCSharpNetCore.Pages;
 using System.Security.Cryptography.X509Certificates;
 //using SeleniumCSharpNetCore.CustomControl;
 
@@ -37,6 +38,30 @@ namespace SeleniumCSharpNetCore
             CustomControl.ComboBox("ContentPlaceHolder1_AllMealsCombo", "Almond");
 
            
+            Console.WriteLine("Test1 has completed.");
+            Assert.Pass();
+
+
+
+
+        }
+
+        [Test]
+
+        public void LogIn()
+        {
+
+            Driver.Navigate().GoToUrl("http://www.eaapp.somee.com/");
+
+            HomePage homePage = new HomePage();
+            LoginPage loginPage = new LoginPage();
+
+            homePage.ClickLogin();
+            loginPage.EnterUserNameAPassword("admin", "password");
+            loginPage.ClickLogin();
+            Assert.That(homePage.IsLogOffVisible(), Is.True, "The log off button was not displayed.");
+
+
             Console.WriteLine("Test1 has completed.");
             Assert.Pass();
 
