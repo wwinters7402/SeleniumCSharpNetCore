@@ -62,7 +62,7 @@ namespace SeleniumCSharpNetCore
             Assert.That(homePage.IsLogOffVisible(), Is.True, "The log off button was not displayed.");
 
 
-            Console.WriteLine("Test1 has completed.");
+           
             Assert.Pass();
 
 
